@@ -1,0 +1,98 @@
+
+
+:root{
+    /* font family */
+    --font-primary: 'DM Serif Display', serif;
+    --font-secondary: 'DM Sans', sans-serif;
+
+    /* font size */
+    --fs-base: 62.5%;
+    --fs-display-large: 2.8rem;
+    --fs-display-medium: 3.2rem;
+    --fs-display-small: 2.6rem;
+    --fs-headline-small: 2.4rem;
+    --fs-title-medium: 1.6rem;
+    --fs-title-small: 1.4rem;
+    --fs-body-large: 1.6rem;
+    --fs-body-medium: 1.4rem;
+    --fs-label-large: 1.4rem;
+    --fs-label-medium: 1.2rem;
+    --fs-label-small: 1.1rem;
+
+    /* font weight */
+    --weight-regular: 400;
+    --weight-medium: 500;
+}
+
+.display-large {
+    font-family: var(--font-primary);
+    font-size: var(--fs-display-large);
+    font-weight: var(--weight-regular);
+    line-height: 32px;
+    letter-spacing: -0.25px;
+}
+
+.display-medium {
+    font-size: var(--fs-display-medium);
+    line-height: 36px;
+}
+
+.display-small {
+    font-family: var(--font-primary);
+    font-size: var(--fs-display-small);
+    font-weight: var(--weight-regular);
+    line-height: 32px;
+}
+
+.headline-small {
+    font-size: var(--fs-headline-small);
+    font-weight: var(--weight-regular);
+    line-height: 32px;
+}
+
+.title-medium {
+    font-size: var(--fs-title-medium);
+    font-weight: var(--weight-medium);
+    line-height: 24px;
+    letter-spacing: 0.15px;
+}
+
+.title-small {
+    font-size: var(--fs-title-small);
+    font-weight: var(--weight-medium);
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}
+
+.body-large {
+    font-size: var(--fs-body-large);
+    line-height: 24px;
+    letter-spacing: 0.5px;
+}
+
+.body-medium {
+    font-size: var(--fs-body-medium);
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+.label-large {
+    font-size: var(--fs-label-large);
+    font-weight: var(--weight-medium);
+    line-height: 20px;
+    letter-spacing: 0.1pxl
+}
+
+.label-medium {
+    font-size: var(--fs-label-medium);
+    font-weight: var(--weight-medium);
+    line-height: 16px;
+    letter-spacing: 0.5px;
+}
+
+.label-small {
+    font-size: var(--fs-label-small);
+    font-weight: var(--weight-medium);
+    line-height: 16px;
+    letter-spacing: 0.5px;
+}
