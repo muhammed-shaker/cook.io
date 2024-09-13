@@ -456,6 +456,8 @@ main { flex-grow: 1; }
   100% { opacity: 0.4; }
 }
 
+
+
 .skeleton-card .card-banner {
   aspect-ratio: 1 / 1;
   width: 100%;

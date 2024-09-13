@@ -1,3 +1,5 @@
+"use strict";
+
 const form = document.querySelector("[data-form]");
 const search_input = document.querySelector("[data-form-input]");
 
@@ -27,11 +29,10 @@ tabButtons.forEach(button => {
         const selectedTabPanel = document.getElementById(
             button.getAttribute('aria-controls')
         );
-        console.log(selectedTabPanel);
         
         selectedTabPanel.removeAttribute("hidden");
 
-        lastActiveTabButton = button; // this         
+        lastActiveTabButton = button; // this       
         lastActiveTabPanel = selectedTabPanel;
     });
 });
