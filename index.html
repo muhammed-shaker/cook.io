@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/typography.css">
 
     <!-- scripts -->
-    <script src="assets/js/theme.js" defer></script>
+    <script src="assets/js/theme.js"  defer></script>
     <script src="assets/js/home.js" defer></script>
 </head>
 <body>
@@ -65,7 +65,7 @@
         </li>
     </menu>
     <main>
-        <section class="hero section">
+        <section class="section hero">
             <h1 class="display-large">Your desired dish?</h1>
             <form class="search-form" data-form>
                 <span class="material-symbols-outlined leading-icon" aria-hidden="true">local_dining</span>
@@ -76,7 +76,7 @@
             </form>
             <p class="label-medium ">Search any recipe e.g: burger, pizza, sandwich, toast.</p>
         </section>
-        <section class="tab section">
+        <section class="section tab">
            <div class="container">
                 <menu class="tab-control">
                     <li>
@@ -105,287 +105,15 @@
                         </button>
                     </li>
                 </menu>
-                <div class="tab-panel" id="tab-1"  role="tabpanel" aria-labelledby="tab-1">
-                    <div class="card-list">
-                        <div class="card">
-                            <figure class="image-loader">
-                                <img src="assets/images/recipe.jpg" loading="lazy" class="card-thumble">
-                            </figure>
-                            <h3 class="title-small">
-                                <a href="/recipes.html" class="card-link">Pizza With French Chese</a>
-                            </h3>
-                            <div class="meta-items">
-                                <span class="meta-duration">
-                                    <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                    <span class="label-medium">2 minutes</span>
-                                </span>
-                                <button class="icon-btn has-state unsaved">
-                                    <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                    <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="skeleton-card">
-                            <div class="skeleton skeleton-card-thumble"></div>
-                            <div class="skeleton-body">
-                                <div class="skeleton skeleton-card-title"></div>
-                                <div class="skeleton skeleton-card-text"></div>
-                            </div>
-                        </div>
-                        <div class="skeleton-card">
-                            <div class="skeleton skeleton-card-thumble"></div>
-                            <div class="skeleton skeleton-card-title"></div>
-                            <div class="skeleton skeleton-card-text"></div>
-                        </div>
-                    </div>
-                    <a class="btn btn-secondary show-more-btn has-state label-large" href="/recipes.html">Show More</a>
-                </div>
-                <div class="tab-panel" id="tab-2" role="tabpanel" aria-labelledby="tab-2" hidden="true">
-                     Lunch
-                </div>
-                <div class="tab-panel" id="tab-3" role="tabpanel" aria-labelledby="tab-3" hidden="true">
-                    Dinner
-                </div>
-                <div class="tab-panel" id="tab-4" role="tabpanel" aria-labelledby="tab-4" hidden="true">
-                    snack
-                </div>
-                <div class="tab-panel" id="tab-5" role="tabpanel" aria-labelledby="tab-5" hidden="true">
-                    Tee time
-                </div>
+                <div class="tab-panel" id="tab-1"  role="tabpanel" aria-labelledby="tab-1"></div>
+                <div class="tab-panel" id="tab-2" role="tabpanel" aria-labelledby="tab-2" hidden="true"></div>
+                <div class="tab-panel" id="tab-3" role="tabpanel" aria-labelledby="tab-3" hidden="true"></div>
+                <div class="tab-panel" id="tab-4" role="tabpanel" aria-labelledby="tab-4" hidden="true"></div>
+                <div class="tab-panel" id="tab-5" role="tabpanel" aria-labelledby="tab-5" hidden="true"></div>
            </div>
         </section>
-        <section class="section slider-section" aria-labelledby="latest-asian-recipes">
-           <div class="container">
-                <h2 class="section-title headline-small" id="latest-asian-recipes">Latest Asian Recipes</h2>
-                <div class="slider">
-                    <ul class="slider-items">
-                        <li class="slider-item">
-                            <div class="card">
-                                <figure class="image-loader">
-                                    <img src="assets/images/recipe.jpg" loading="lazy" class="card-thumble">
-                                </figure>
-                                <h3 class="title-small">
-                                    <a href="/recipes.html" class="card-link">Pizza With French Chese</a>
-                                </h3>
-                                <div class="meta-items">
-                                    <span class="meta-duration">
-                                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                        <span class="label-medium">2 minutes</span>
-                                    </span>
-                                    <button class="icon-btn has-state unsaved">
-                                        <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                        <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="slider-item">
-                            <div class="card">
-                                <figure class="image-loader">
-                                    <img src="assets/images/recipe.jpg" loading="lazy" class="card-thumble">
-                                </figure>
-                                <h3 class="title-small">
-                                    <a href="/recipes.html" class="card-link">Pizza With French Chese</a>
-                                </h3>
-                                <div class="meta-items">
-                                    <span class="meta-duration">
-                                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                        <span class="label-medium">2 minutes</span>
-                                    </span>
-                                    <button class="icon-btn has-state unsaved">
-                                        <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                        <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="slider-item">
-                            <div class="card">
-                                <figure class="image-loader">
-                                    <img src="assets/images/recipe.jpg" loading="lazy" class="card-thumble">
-                                </figure>
-                                <h3 class="title-small">
-                                    <a href="/recipes.html" class="card-link">Pizza With French Chese</a>
-                                </h3>
-                                <div class="meta-items">
-                                    <span class="meta-duration">
-                                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                        <span class="label-medium">2 minutes</span>
-                                    </span>
-                                    <button class="icon-btn has-state unsaved">
-                                        <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                        <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="slider-item">
-                            <div class="card">
-                                <figure class="image-loader">
-                                    <img src="assets/images/recipe.jpg" loading="lazy" class="card-thumble">
-                                </figure>
-                                <h3 class="title-small">
-                                    <a href="/recipes.html" class="card-link">Pizza With French Chese</a>
-                                </h3>
-                                <div class="meta-items">
-                                    <span class="meta-duration">
-                                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                        <span class="label-medium">2 minutes</span>
-                                    </span>
-                                    <button class="icon-btn has-state unsaved">
-                                        <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                        <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="slider-item">
-                            <div class="card">
-                                <figure class="image-loader">
-                                    <img src="assets/images/recipe.jpg" loading="lazy" class="card-thumble">
-                                </figure>
-                                <h3 class="title-small">
-                                    <a href="/recipes.html" class="card-link">Pizza With French Chese</a>
-                                </h3>
-                                <div class="meta-items">
-                                    <span class="meta-duration">
-                                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                        <span class="label-medium">2 minutes</span>
-                                    </span>
-                                    <button class="icon-btn has-state unsaved">
-                                        <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                        <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="slider-item">
-                            <a href="recipes.html" class="load-more-card has-state">
-                            <span class="label-large">Show more</span>
-            
-                            <span class="material-symbols-outlined" aria-hidden="true">navigate_next</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-           </div>
-        </section>
-        <section class="section slider-section" aria-labelledby="latest-french-recipes">
-            <div class="container">
-                 <h2 class="section-title headline-small" id="latest-french-recipes">Latest French Recipes</h2>
-                 <div class="slider">
-                     <ul class="slider-items">
-                         <li class="slider-item">
-                             <div class="card">
-                                 <figure class="image-loader">
-                                     <img src="assets/images/recipe.jpg" loading="lazy" class="card-thumble">
-                                 </figure>
-                                 <h3 class="title-small">
-                                     <a href="/recipes.html" class="card-link">Pizza With French Chese</a>
-                                 </h3>
-                                 <div class="meta-items">
-                                     <span class="meta-duration">
-                                         <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                         <span class="label-medium">2 minutes</span>
-                                     </span>
-                                     <button class="icon-btn has-state unsaved">
-                                         <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                         <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                                     </button>
-                                 </div>
-                             </div>
-                         </li>
-                         <li class="slider-item">
-                             <div class="card">
-                                 <figure class="image-loader">
-                                     <img src="assets/images/recipe.jpg" loading="lazy" class="card-thumble">
-                                 </figure>
-                                 <h3 class="title-small">
-                                     <a href="/recipes.html" class="card-link">Pizza With French Chese</a>
-                                 </h3>
-                                 <div class="meta-items">
-                                     <span class="meta-duration">
-                                         <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                         <span class="label-medium">2 minutes</span>
-                                     </span>
-                                     <button class="icon-btn has-state unsaved">
-                                         <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                         <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                                     </button>
-                                 </div>
-                             </div>
-                         </li>
-                         <li class="slider-item">
-                             <div class="card">
-                                 <figure class="image-loader">
-                                     <img src="assets/images/recipe.jpg" loading="lazy" class="card-thumble">
-                                 </figure>
-                                 <h3 class="title-small">
-                                     <a href="/recipes.html" class="card-link">Pizza With French Chese</a>
-                                 </h3>
-                                 <div class="meta-items">
-                                     <span class="meta-duration">
-                                         <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                         <span class="label-medium">2 minutes</span>
-                                     </span>
-                                     <button class="icon-btn has-state unsaved">
-                                         <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                         <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                                     </button>
-                                 </div>
-                             </div>
-                         </li>
-                         <li class="slider-item">
-                             <div class="card">
-                                 <figure class="image-loader">
-                                     <img src="assets/images/recipe.jpg" loading="lazy" class="card-thumble">
-                                 </figure>
-                                 <h3 class="title-small">
-                                     <a href="/recipes.html" class="card-link">Pizza With French Chese</a>
-                                 </h3>
-                                 <div class="meta-items">
-                                     <span class="meta-duration">
-                                         <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                         <span class="label-medium">2 minutes</span>
-                                     </span>
-                                     <button class="icon-btn has-state unsaved">
-                                         <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                         <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                                     </button>
-                                 </div>
-                             </div>
-                         </li>
-                         <li class="slider-item">
-                             <div class="card">
-                                 <figure class="image-loader">
-                                     <img src="assets/images/recipe.jpg" loading="lazy" class="card-thumble">
-                                 </figure>
-                                 <h3 class="title-small">
-                                     <a href="/recipes.html" class="card-link">Pizza With French Chese</a>
-                                 </h3>
-                                 <div class="meta-items">
-                                     <span class="meta-duration">
-                                         <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                         <span class="label-medium">2 minutes</span>
-                                     </span>
-                                     <button class="icon-btn has-state unsaved">
-                                         <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                         <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                                     </button>
-                                 </div>
-                             </div>
-                         </li>
-                         <li class="slider-item">
-                             <a href="recipes.html" class="load-more-card has-state">
-                             <span class="label-large">Show more</span>
-             
-                             <span class="material-symbols-outlined" aria-hidden="true">navigate_next</span>
-                             </a>
-                         </li>
-                     </ul>
-                 </div>
-            </div>
-        </section>
+        <section class="section slider-section" data-slider-section></section>
+        <section class="section slider-section" data-slider-section></section>
         <section class="section tags">
             <div class="container">
                 <h2 class="sectoin-title display-small">Choose your health preference.</h2>

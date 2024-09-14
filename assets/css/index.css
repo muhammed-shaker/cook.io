@@ -118,6 +118,7 @@ button{
 body{
   background-color: var(--background);
   color: var(--on-background);
+  padding-top: calc(var(--header-height) + 1em);
   padding-bottom: calc(var(--mobile-nav-height) + 1em);
 }
 
@@ -200,7 +201,7 @@ body{
 
 .show-more-btn{
   max-width: 100%;
-  margin-block-start: 1em;
+  margin-block-start: 2.5em;
 }
 
 .icon-btn {
@@ -231,6 +232,12 @@ body{
   align-items: center;
   padding-inline: 1em;
   border-bottom: 1px solid var(--ouline);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background);
+  z-index: 10000;
 }
 
 .header .navbar,
@@ -366,7 +373,7 @@ body{
   padding-top: 1em;
   margin-bottom: 2em;
   position: sticky;
-  top: 0;
+  top: calc(var(--header-height) - 2px);
   z-index: 10;
 }
 
