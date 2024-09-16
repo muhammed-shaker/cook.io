@@ -214,10 +214,13 @@ function saveRecipe(recipeid, element){
         window.localStorage.removeItem("cook.io-" + recipeid);
         element.classList.remove("saved");
         element.classList.add("unsaved");
+        notification("Removed from Recipe book");
     } else{
         window.localStorage.setItem(("cook.io-" + recipeid), "saved");
         element.classList.remove("unsaved");
         element.classList.add("saved");
+        notification("Added to Recipe book");
+
     }
 }
 
@@ -233,4 +236,22 @@ function getTime(minutes){
     }
     
     return {duration: time, unit};
+}
+
+
+// Snackbar
+
+const snackbarContainer = document.createElement("div");
+snackbarContainer.classList.add("snackbar-container");
+window.document.body.appendChild(snackbarContainer);
+
+function notification(messsage){
+    const snackbar = document.createElement("div");
+    snackbar.classList.add("snackbar");
+    snackbar.innerHTML = `<div class=<p class="body-medium">${messsage}</p>`;
+    snackbar.addEventListener("animationend", () =>{
+        snackbar.remove();
+    });
+
+    snackbarContainer.appendChild(snackbar);
 }
