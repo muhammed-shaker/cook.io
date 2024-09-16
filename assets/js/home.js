@@ -1,3 +1,5 @@
+'use strict';
+
 const form = document.querySelector("[data-form]");
 const search_input = document.querySelector("[data-form-input]");
 
@@ -83,11 +85,11 @@ const skeletonTemplate = `
 
 function renderCards(selectedButton, selectedPanel){
 
-    selectedPanel.innerHTML = `
-        <div class="card-list">
-            ${skeletonTemplate.repeat(12)}
-        </div>
-    `;
+    selectedPanel.innerHTML =
+    `<div class="card-list">
+        ${skeletonTemplate.repeat(12)}
+    </div>`;
+
     const mealType = selectedButton.textContent.trim().toLowerCase();
 
     API.fetch([["mealType", mealType], ...API.card_queries], data =>{
@@ -96,42 +98,128 @@ function renderCards(selectedButton, selectedPanel){
         cardList.classList.add('card-list');
 
         for(let i = 0; i < 12 ; i++){
-            const {recipe} = {
-                image,
-                label: title,
-                totalTime: cookingTime,
-                uri,
-            } = data.hits[i];
 
-            const time = getTime(recipe.totalTime);
+            const {image, label, totalTime, uri} = data.hits[i].recipe;
 
-            cardList.innerHTML += `
-            <div class="card">
-                <figure class="image-loader">
-                    <img class="card-thumble" src="${recipe.image}" alt="${recipe.label}" loading="lazy" width="195" height="195">
-                </figure>
-                <h3 class="title-small">
-                    <a href="/recipes.html" class="card-link">${recipe.label ?? "Untiteled"}</a>
-                </h3>
-                <div class="meta-items">
-                    <span class="meta-duration">
-                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                        <span class="label-medium"> ${time.duration|| "<1"} ${time.unit}</span>
-                    </span>
-                    <button class="icon-btn has-state unsaved">
-                        <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                        <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                    </button>
-                </div>
-            </div>`;
+            const cardElement = createCard(label, image, totalTime, uri);
+            cardList.appendChild(cardElement);
         }
+
         selectedPanel.appendChild(cardList);
-        selectedPanel.innerHTML += `
-            <a class="btn btn-secondary show-more-btn has-state label-large" href="/recipes.html?mealTyep=${mealType}">Show More</a>
-        `;
+        selectedPanel.innerHTML +=
+        `<a class="btn btn-secondary show-more-btn has-state label-large" href="./recipes?mealTyep=${mealType}">
+            Show More
+        </a>`;
     });
     
 };
+
+
+const sliderSections = document.querySelectorAll('[data-slider-section]');
+const cuisines = ["Asian", "French"];
+sliderSections.forEach((section, index) =>{  
+    section.innerHTML =
+    `<div class="container">
+        <h2 class="section-title headline-small">Latest ${cuisines[index]} Recipes</h2>
+        <div class="slider">
+            <ul class="slider-items">
+                ${(`<li class="slider-item">${skeletonTemplate}</li>`).repeat(10)}
+            </ul>
+        </div>
+    </div>`;
+});
+
+renderCards(lastActiveTabButton, lastActiveTabPanel);
+
+
+sliderSections.forEach((section, index) =>{  
+    API.fetch([["cuisineType", cuisines[index]], ...API.card_queries], data =>{
+        section.innerHTML =
+        `<div class="container">
+            <h2 class="section-title headline-small">Latest ${cuisines[index]} Recipes</h2>
+            <div class="slider">
+                <ul class="slider-items" data-slider-item></ul>
+            </div>
+        </div>`;
+
+        const slider_items = section.querySelector("[data-slider-item]");
+        
+        for(let i = 0; i < 10; i++){
+            const slider_item = document.createElement("li");
+            slider_item.classList.add("slider-item");
+            
+            const {image, label, totalTime, uri} = data.hits[i].recipe;
+
+            const cardElement = createCard(label, image, totalTime, uri);
+            slider_item.appendChild(cardElement);
+            slider_items.appendChild(slider_item);
+        }
+
+        slider_items.innerHTML += 
+        `<li class="slider-item">
+            <a href="./recipes.html" class="load-more-card has-state">
+                <span class="label-large">Show more</span>
+                <span class="material-symbols-outlined" aria-hidden="true">navigate_next</span>
+            </a>
+        </li>`;
+    });
+});
+
+
+
+/**
+ * 
+ * @param {string} label - title of the recipe
+ * @param {string} image - image of the recipe
+ * @param {object} time  - object with 2 porperties, duration and the unit
+ * @param {string} uri   - uri of the recipe 
+ * @param {number} type - defines the type of the return (0: HTML string or 1: nodeElement)
+ */
+function createCard(label, image, cookingTime, uri){
+
+    const recipe_id = uri.slice(uri.lastIndexOf("_") + 1, -1);
+
+    // Check if the recipe is saved
+    let is_saved = false;
+    if(window.localStorage.getItem("cook.io-" + recipe_id)){
+        is_saved = true;
+    }
+
+    const time = getTime(cookingTime);
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = 
+    `<figure class="image-loader">
+        <img class="card-thumble" src="${image}" alt="${label}" loading="lazy" width="195" height="195">
+    </figure>
+    <h3 class="title-small">
+        <a href="/recipes.html" class="card-link">${label ?? "Untiteled"}</a>
+    </h3>
+    <div class="meta-items">
+        <span class="meta-duration">
+            <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+            <span class="label-medium"> ${time.duration|| "<1"} ${time.unit}</span>
+        </span>
+        <button class="icon-btn has-state ${is_saved ? 'saved' : 'unsaved'}" onclick="saveRecipe('${recipe_id}', element = this)">
+            <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
+            <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
+        </button>
+    </div>`;
+
+    return card;
+}
+
+function saveRecipe(recipeid, element){   
+    if(window.localStorage.getItem("cook.io-" + recipeid)){
+        window.localStorage.removeItem("cook.io-" + recipeid);
+        element.classList.remove("saved");
+        element.classList.add("unsaved");
+    } else{
+        window.localStorage.setItem(("cook.io-" + recipeid), "saved");
+        element.classList.remove("unsaved");
+        element.classList.add("saved");
+    }
+}
 
 function getTime(minutes){
     const hours = Math.floor(minutes / 60);
@@ -146,77 +234,3 @@ function getTime(minutes){
     
     return {duration: time, unit};
 }
-
-const sliderSections = document.querySelectorAll('[data-slider-section]');
-const cuisines = ["Asian", "French"];
-sliderSections.forEach((section, index) =>{  
-
-    section.innerHTML = `
-    <div class="container">
-        <h2 class="section-title headline-small">Latest ${cuisines[index]} Recipes</h2>
-        <div class="slider">
-            <ul class="slider-items">
-                ${(`<li class="slider-item">${skeletonTemplate}</li>`).repeat(10)}
-            </ul>
-        </div>
-    </div>
-    `;
-});
-
-renderCards(lastActiveTabButton, lastActiveTabPanel);
-
-
-sliderSections.forEach((section, index) =>{  
-    API.fetch([["cuisineType", cuisines[index]], ...API.card_queries], data =>{
-        const recipes = data.hits.map(hit =>{
-            const recipe = hit.recipe;
-            const time = getTime(recipe.totalTime);
-            return `<li class="slider-item">
-                    <div class="card">
-                        <figure class="image-loader">
-                            <img class="card-thumble" src="${recipe.image}" alt="${recipe.label}" loading="lazy" width="195" height="195">
-                        </figure>
-                        <h3 class="title-small">
-                            <a href="/recipes.html" class="card-link">${recipe.label ?? "Untiteled"}</a>
-                        </h3>
-                        <div class="meta-items">
-                            <span class="meta-duration">
-                                <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                                <span class="label-medium"> ${time.duration|| "<1"} ${time.unit}</span>
-                            </span>
-                            <button class="icon-btn has-state unsaved">
-                                <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-                                <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-                            </button>
-                        </div>
-                    </div>
-                </li>`;
-            
-        });
-        section.innerHTML = `
-        <div class="container">
-            <h2 class="section-title headline-small">Latest ${cuisines[index]} Recipes</h2>
-            <div class="slider">
-                <ul class="slider-items">
-                    ${recipes.join("")}
-                    <li class="slider-item">
-                        <a href="recipes.html" class="load-more-card has-state">
-                        <span class="label-large">Show more</span>
-        
-                        <span class="material-symbols-outlined" aria-hidden="true">navigate_next</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>`;
-    });
-});
-
-
-
-
-
-
-
-
-
