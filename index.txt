@@ -1,200 +1,3 @@
-Cook.io - Cooking made easy.
-This is a recipe application made by codewithsadee
-
-
-
-#---------- HEADER ----------#
-
-alt = Cook.io
-
-Home
-Recipes
-
-aria-label = Toggle light and dark theme
-
-<span class="material-symbols-outlined light-icon" aria-hidden="true">light_mode</span>
-<span class="material-symbols-outlined dark-icon" aria-hidden="true">dark_mode</span>
-
-<span class="material-symbols-outlined" aria-hidden="true">book</span>
-Saved Recipes
-
-
-
-#---------- MOBILE NAV ----------#
-
-<span class="material-symbols-outlined" aria-hidden="true">lunch_dining</span>
-Recipes
-
-<span class="material-symbols-outlined" aria-hidden="true">home</span>
-Home
-
-<span class="material-symbols-outlined" aria-hidden="true">book</span>
-Saved
-
-
-
-#---------- HERO ----------#
-
-Your desired dish?
-
-<span class="material-symbols-outlined leading-icon" aria-hidden="true">local_dining</span>
-
-aria-label = Search recipes
-placeholder = Search recipes...
-
-aria-label = Submit
-<span class="material-symbols-outlined" aria-hidden="true">search</span>
-
-Search any recipe e.g: burger, pizza, sandwich, toast.
-
-
-
-#---------- TAB ----------#
-
-Breakfast
-Lunch
-Dinner
-Snack
-Teatime
-
-alt = Recipe name
-
-Recipe name
-
-<span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-2 minutes
-
-<span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
-<span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
-
-
-
-
-#---------- TAG ----------#
-
-Choose your health preference.
-
-Choosing your health preference is an important step towards achieving a healthier lifestyle.
-
-href = wheat-free
-Wheat-Free
-
-href = vegetarian
-Vegetarian
-
-href = vegan
-Vegan
-
-href = tree-nut-free
-Tree-Nut-Free
-
-href = sulfite-free
-Sulfite-Free
-
-href = sugar-conscious
-Sugar-Conscious
-
-href = soy-free
-Soy-Free
-
-href = shellfish-free
-Shellfish-Free
-
-href = sesame-free
-Sesame-Free
-
-href = red-meat-free
-Red-Meat-Free
-
-href = pork-free
-Pork-Free
-
-href = pecatarian
-Pescatarian
-
-href = peanut-free
-Peanut-Free
-
-href = paleo
-Paleo
-
-href = No-oil-added
-No oil added
-
-href = mustard-free
-Mustard-Free
-
-href = mollusk-free
-Mollusk-Free
-
-href = Mediterranean
-Mediterranean
-
-href = lupine-free
-Lupine-Free
-
-href = low-sugar
-Low Sugar
-
-href = low-potassium
-Low Potassium
-
-href = kosher
-Kosher
-
-href = kidney-friendly
-Kidney-Friendly
-
-href = keto-friendly
-Keto-Friendly
-
-href = immuno-supportive
-Immuno-Supportive
-
-href = gluten-free
-Gluten-Free
-
-href = fodmap-free
-FODMAP-Free
-
-href = fish-free
-Fish-Free
-
-href = egg-free
-Egg-Free
-
-href = DASH
-DASH
-
-href = dairy-free
-Dairy-Free
-
-href = crustacean-free
-Crustcean-Free
-
-href = celery-free
-Celery-Free
-
-href = alcohol-free
-Alcohol-Free
-
-href = alcohol-cocktail
-Alcohol-Cocktail
-
-
-
-#---------- FOOTER ----------#
-
-Copyright 2023 codewithsadee
-
-alt = Cook.io
-
-href = https://www.edamam.com/
-edamam free recipe api
-
-
-
-
 #============== RECIPES PAGE =============#
 
 All Recipes - Cook.io
@@ -203,21 +6,20 @@ All Recipes - Cook.io
 
 #---------- FILTER ----------#
 
-<span class="material-symbols-outlined" aria-hidden="true">filter_list</span>
-Filters
+
 
 aria-label = Close filter bar
 <span class="material-symbols-outlined" aria-hidden="true">close</span>
 
 Search
-placeholder = Search recipes
+placeholder = Searchrecipes
 
 <span class="material-symbols-outlined" aria-hidden="true">timer</span>
 Cooking Time
 
 <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
 
-&lt; 5 minutes
+&lt; 5 minutes 
 value = 5
 aria-label = 5 or less minutes
 

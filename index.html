@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="assets/css/typography.css">
 
     <!-- scripts -->
-    <script src="assets/js/theme.js"  defer></script>
-    <script src="assets/js/home.js" defer></script>
+    <script src="assets/js/theme.js"  defer type="module"></script>
+    <script src="assets/js/global.js" defer type="module"></script>
+    <script src="assets/js/home.js" defer type="module"></script>
 </head>
 <body>
     <header class="header">
@@ -26,13 +27,13 @@
         </a>
         <menu class="navbar">
             <li><a href="/" class="title-small">Home</a></li>
-            <li><a href="/recipes.html">Recipes</a></li>
+            <li><a href="./recipes">Recipes</a></li>
         </menu>
         <button class="theme-toggle-button has-state" aria-label="Toggle light and dark theme" id="theme-toggle-btn">
             <span class="material-symbols-outlined theme-icon light-icon"  aria-hidden="true">light_mode</span>
             <span class="material-symbols-outlined theme-icon dark-icon"  aria-hidden="true">dark_mode</span>
         </button>
-        <a href="/saved-recipes.html" class="saved-btn">
+        <a href="./saved-recipes" class="saved-btn">
             <span class="material-symbols-outlined" aria-hidden="true">book</span>
             Saved Recipes
         </a>
@@ -80,27 +81,27 @@
            <div class="container">
                 <menu class="tab-control">
                     <li>
-                        <button class="has-state title-small tab-btn" role="tab" aria-controls="tab-1" aria-selected="true">
+                        <button class="has-state title-small tab-btn" role="tab" aria-controls="tab-1" aria-selected="true" data-hb-clicked="true"> 
                             Breakfast
                         </button>
                     </li>
                     <li>
-                        <button class="has-state title-small tab-btn" role="tab" aria-controls="tab-2" aria-selected="false">
+                        <button class="has-state title-small tab-btn" role="tab" aria-controls="tab-2" aria-selected="false" data-hb-clicked="false">
                             Lunch
                         </button>
                     </li>
                     <li>
-                        <button class="has-state title-small tab-btn" role="tab" aria-controls="tab-3" aria-selected="false">
+                        <button class="has-state title-small tab-btn" role="tab" aria-controls="tab-3" aria-selected="false" data-hb-clicked="false">
                             Dinner
                         </button>
                     </li>
                     <li>
-                        <button class="has-state title-small tab-btn" role="tab" aria-controls="tab-4" aria-selected="false">
+                        <button class="has-state title-small tab-btn" role="tab" aria-controls="tab-4" aria-selected="false" data-hb-clicked="false">
                             Snack
                         </button>
                     </li>
                     <li>
-                        <button class="has-state title-small tab-btn" role="tab" aria-controls="tab-5" aria-selected="false">
+                        <button class="has-state title-small tab-btn" role="tab" aria-controls="tab-5" aria-selected="false" data-hb-clicked="false">
                             Teatime
                         </button>
                     </li>
