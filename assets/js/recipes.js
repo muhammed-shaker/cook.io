@@ -83,6 +83,7 @@ window.addEventListener("scroll", () =>{
 
 /* Rendering Recipes */
 const cardList = document.querySelector("[data-card-list]");
+const loadMore = document.querySelector("[data-load-more]");
 
 cardList.innerHTML = skeletonTemplate.repeat(20);
 
@@ -94,8 +95,16 @@ const default_queries = [
     ["mealType", "teatime"],
     ...API.default_queries,
 ];
-  
+ 
+let nextPage = {available: false, URL: ""};
+
 API.fetch(queries || default_queries, data =>{
+    console.log(data);
+    
+    if(data._links.next){
+        nextPage = {available: true, URL: data._links.next.href};
+    }
+
     cardList.innerHTML = "";
 
     if(data.hits.length){
@@ -104,9 +113,41 @@ API.fetch(queries || default_queries, data =>{
 
             const cardElement = createCard(label, image, totalTime, uri);
             cardList.appendChild(cardElement);
+            if(nextPage.available){
+                loadMore.innerHTML = 
+                `<div class="loading-container">
+                    <div class="loading-circle"></div>
+                    <div class="loading-circle"></div>
+                    <div class="loading-circle"></div>
+                </div>`;
+            } else{
+                loadMore.innerHTML = `<p class="info-text">No recipe found</p>`;
+            }
+
         });
 
-    } else{
-        document.querySelector("[data-load-more]").innerHTML = `<p class="info-text">No recipe found</p>`;
     }
 });
+
+window.addEventListener('scroll', async () => {
+
+    if (loadMore.getBoundingClientRect().top + 96  < window.innerHeight && nextPage.available) {  // 96 = 80 mobile nav + 16 body padding
+        const response = await fetch(nextPage.URL);                                              // css:  body{padding-bottom: calc(var(--mobile-nav-height) + 1em);}
+        const data = await response.json();
+        
+        if(data._links.next){
+            nextPage = {available: true, URL: data._links.next.href};
+        } else{
+            nextPage = {available: false, URL: ""};
+            loadMore.innerHTML = `<p class="info-text">No more recipes</p>`;
+        }   
+
+        data.hits.forEach(item =>{
+            const {image, label, totalTime, uri} = item.recipe;
+    
+            const cardElement = createCard(label, image, totalTime, uri);
+            cardList.appendChild(cardElement);
+        });
+    }
+});
+

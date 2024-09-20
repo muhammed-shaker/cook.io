@@ -842,6 +842,10 @@ button{
   align-items: center;
 }
 
+.load-more:has(p.info-text){
+  height: 80px;
+}
+
 .info-text {
   position: absolute;
   top: 0;
@@ -849,6 +853,36 @@ button{
   transform: translateX(-50%);
   font-weight: var(--weight-medium);
   opacity: 0.7;
+  margin-top: 2em;
+}
+
+.loading-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-block-start: 4em;
+}
+
+.loading-circle {
+  width: 15px;
+  height: 15px;
+  background-color: var(--on-background-variant);
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.loading-circle:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-circle:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  to {
+      transform: translateY(-8px);
+  }
 }
 
 
