@@ -46,7 +46,7 @@ recipe.innerHTML =
 </figure>
 <div class="recipe-detail-content">
     <div class="recipe-details__title">
-        <h1 class="display-small">${title}</h1>
+        <h1 class="display-small">${title ?? "Untitled"}</h1>
         <button class="btn btn-secondary has-state has-icon ${is_saved ? 'saved' : 'unsaved'}" onclick="saveRecipe('${recipe_id}', element = this)"">
             <span class="material-symbols-outlined unsaved-icon" aria-hidden="true">bookmark_add</span>
             <span class="label-large unsaved-txt">Unsaved</span>
@@ -83,7 +83,7 @@ recipe.innerHTML =
                 key = "diet";
             }
 
-            return `<a class="recipe-details__tags__tag label-large has-state" href="/recipes.html?${key}=${tag.toLowerCase()}">${tag}</a>`;
+            return `<a class="recipe-details__tags__tag label-large has-state" href="./recipes.html?${key}=${tag.toLowerCase()}">${tag}</a>`;
         }).join("")}
     </div>
     <div class="recipe-details__ingr">

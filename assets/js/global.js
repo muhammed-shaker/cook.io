@@ -16,7 +16,7 @@ export function createCard(label, image, cookingTime, uri){
         <img class="card-thumble" src="${image}" alt="${label}" loading="lazy" width="195" height="195">
     </figure>
     <h3 class="title-small">
-        <a href="/detail.html?recipe_id=${recipe_id}" class="card-link">${label ?? "Untiteled"}</a>
+        <a href="./detail.html?recipe_id=${recipe_id}" class="card-link">${label ?? "Untiteled"}</a>
     </h3>
     <div class="meta-items">
         <span class="meta-duration">
