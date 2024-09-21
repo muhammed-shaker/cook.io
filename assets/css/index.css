@@ -111,6 +111,7 @@ ul, menu{
 
 button{
   background-color: transparent;
+  color: inherit;
   border: none;
 }
 
@@ -179,8 +180,7 @@ body{
   justify-content: center;
   align-items: center;
   gap: 8px;
-  border-radius: var(--radius-4);
-  transition: var(--transition-short);
+  border-radius: 4px;
 }
 
 .btn .material-symbols-outlined { font-size: 1.8rem; }
@@ -224,11 +224,6 @@ body{
   place-items: center;
 }
 
-button{
-  color: inherit;
-}
-
-
 /* Header  */
 .header{
   height: var(--header-height);
@@ -259,10 +254,6 @@ button{
   align-items: center;
   background-color: var(--primary-container);
   cursor: pointer;
-}
-
-.theme-toggle-button .light-icon{
-  color: white;
 }
 
 [data-theme="light"] :where(.logo--dark, .theme-toggle-button .light-icon),
@@ -386,7 +377,6 @@ button{
   height: 48px;
   padding-inline: 24px;
   border-block-end: 2px solid transparent;
-  transition: var(--transition-short);
   flex: 1 0 80px;
   color: inherit;
   cursor: pointer;

@@ -1,6 +1,6 @@
 export const API = {
     accessPoint: "https://api.edamam.com/api/recipes/v2",
-    applicationId: "28de1a66",
+    application_ID: "28de1a66",
     key: "85d45c4eb4003d8f3ae4c23e42a2d87a",
     type: "public",
     fetch: async function(queries, successCallback){
@@ -10,7 +10,7 @@ export const API = {
         .replace(/ /g, "%20")
         .replace(/\+/g, "%2B");
     
-        const requestUrl = `${API.accessPoint}?app_id=${API.applicationId}&app_key=${API.key}&type=${API.type}${query ? ("&" + query) :""}`;
+        const requestUrl = `${API.accessPoint}?app_id=${API.application_ID}&app_key=${API.key}&type=${API.type}${query ? ("&" + query) :""}`;
         
         const response = await fetch(requestUrl);
         

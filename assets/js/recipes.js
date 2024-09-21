@@ -98,9 +98,7 @@ const default_queries = [
  
 let nextPage = {available: false, URL: ""};
 
-API.fetch(queries || default_queries, data =>{
-    console.log(data);
-    
+API.fetch(queries || default_queries, data =>{   
     if(data._links.next){
         nextPage = {available: true, URL: data._links.next.href};
     }
