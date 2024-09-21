@@ -10,7 +10,7 @@ const search_input = document.querySelector("[data-form-input]");
 form.addEventListener('submit', event =>{
     event.preventDefault();
     if(search_input.value){
-        window.location = `/recipes.html?q=${search_input.value}`;
+        window.location = `./recipes.html?q=${search_input.value}`;
     }
 });
 
