@@ -393,3 +393,54 @@ z-index: 10000;
     100% { opacity: 0; }
 }
   
+
+
+/* Skeleton  */
+
+.skeleton{
+    background-color: var(--on-background);
+    animation: skeleton-loading 600ms linear infinite;
+    border-radius: 1px;
+    margin-block: 1em;
+}
+  
+@keyframes skeleton-loading {
+    0%{
+        opacity: .2;
+    }
+    100%{
+        opacity: .4;
+    }
+}
+
+.skeleton-375{
+    width: 375px;
+    height: 375px;
+}
+
+
+.skeleton-20-200{
+    width: 200px;
+    height: 20px;
+}
+
+.skeleton-20-100{
+    width: 100px;
+    height: 20px;
+}
+
+.skeleton-80-80{
+    width: 80px;
+    height: 80px;
+}
+
+.skeleton-35-50{
+    width: 70px;
+    height: 35px;
+}
+
+.skeleton-15-250{
+    width: 250px;
+    height: 15px;
+}
+
