@@ -224,6 +224,21 @@ body{
   place-items: center;
 }
 
+.all-recipes:not(:has(+ .no-saved-recipes + .card-list>.card)){
+  display: none;
+}
+
+.no-saved-recipes{
+  text-align: center;
+  margin-top: 3em;
+  display: none;
+}
+
+.no-saved-recipes:has(:not(+ .card-list>.card)){
+  display: block;
+}
+
+
 /* Header  */
 .header{
   height: var(--header-height);

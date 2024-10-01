@@ -38,6 +38,11 @@ window.saveRecipe = function (recipeid, element){
         element.classList.remove("saved");
         element.classList.add("unsaved");
         notification("Removed from Recipe book");
+
+        if(window.location.toString().endsWith("saved-recipes.html")){
+            element.parentElement.parentElement.remove();
+        }
+        
     } else{
         window.localStorage.setItem(("cook.io-" + recipeid), "saved");
         element.classList.remove("unsaved");
