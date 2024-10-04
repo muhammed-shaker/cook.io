@@ -3,6 +3,10 @@
 import { API } from "./api.js";
 import {getTime} from "./global.js";
 
+if(! window.location.search){
+    window.location = "/";
+}
+
 const recipe_ID = window.location.search.slice(11);
 const request_URL = `${API.accessPoint}/${recipe_ID}?app_id=${API.application_ID}&app_key=${API.key}&type=${API.type}`;
 
@@ -47,7 +51,7 @@ recipe.innerHTML =
 <div class="recipe-detail-content">
     <div class="recipe-details__title">
         <h1 class="display-small">${title ?? "Untitled"}</h1>
-        <button class="btn btn-secondary has-state has-icon ${is_saved ? 'saved' : 'unsaved'}" onclick="saveRecipe('${recipe_id}', element = this)"">
+        <button class="btn btn-secondary has-state has-icon ${is_saved ? 'saved' : 'unsaved'}" onclick="saveRecipe('${recipe_id}', element = this)">
             <span class="material-symbols-outlined unsaved-icon" aria-hidden="true">bookmark_add</span>
             <span class="label-large unsaved-txt">Unsaved</span>
 

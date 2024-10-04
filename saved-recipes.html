@@ -13,11 +13,13 @@
     <!-- styles -->
     <link rel="stylesheet" href="./assets/css/detail.css">
     <link rel="stylesheet" href="./assets/css/typography.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
 
     <!-- scripts -->
     <script src="./assets/js/theme.js"  defer type="module"></script>
     <script src="./assets/js/global.js" defer type="module"></script>
-    <script src="./assets/js/detail.js" defer type="module"></script>
+    <script src="./assets/js/saved-recipes.js" defer type="module"></script>
+    
 </head>
 <body>
     <header class="header">
@@ -56,8 +58,8 @@
                 <span class="nav-link__label label-small">Home</span>
             </a>
         </li>
-        <li class="nav-link">
-            <a href="./saved-recipes.html">
+        <li class="nav-link" aria-current="true">
+            <a href="#">
                 <span class="nav-link__icon">
                     <span class="material-symbols-outlined" aria-hidden="true">book</span>
                 </span>
@@ -66,38 +68,10 @@
         </li>
     </menu>
     <main>
-        <article class="recipe-details container" data-recipe>
-            <figure class="skeleton skeleton-375">
-                
-            </figure>
-            <div class="recipe-detail-content">
-                <div class="recipe-details__title">
-                    <div class="skeleton skeleton-20-200"></div>
-                </div>
-                <div class="recipe-details__author label-large">
-                    <div class="skeleton skeleton-20-100"></div>
-                </div>
-                <div class="recipe-details__stats">
-                    <div class="skeleton skeleton-80-80"></div>
-                    <div class="skeleton skeleton-80-80"></div>
-                    <div class="skeleton skeleton-80-80"></div>
-                </div>
-                <div class="recipe-details__tags">
-                    <div class="skeleton skeleton-35-50"></div>
-                    <div class="skeleton skeleton-35-50"></div>
-                    <div class="skeleton skeleton-35-50"></div>
-                    <div class="skeleton skeleton-35-50"></div>
-                </div>
-                <div class="recipe-details__ingr">
-                    <div class="skeleton skeleton-20-100"></div>
-                    <ul class="skeleton-ingrs">
-                        <li class="skeleton skeleton-15-250"></li>
-                        <li class="skeleton skeleton-15-250"></li>
-                        <li class="skeleton skeleton-15-250"></li>
-                        
-                    </ul>
-                </div>
-            </div>
+        <article class="container" >
+            <h2 class="headline-small section-title all-recipes">All Saved Recipes</h2>
+            <h2 class="label-large section-title no-saved-recipes">No  saved recipes.</h2>
+            <div class="card-list" data-card-list></div>
         </article>
     </main>
 </body>
